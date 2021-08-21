@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { ArrowLeft, Home, Search, Notifications, Email } from '../../styles/Icons';
 
 export const Container = styled.div`
  display: flex;
@@ -12,18 +13,19 @@ export const Container = styled.div`
  }
 `;
 
-export const Header = styled.div`
-position: sticky;
-top: 0;
-background: var(--primary);
+export const Header = styled.div`   
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    background: var(--primary);
 
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 
-text-align: left;
+    text-align: left;
 
-padding: 8px 0 9px 13px;
-border-bottom: 1px solid var(--outline);
+    padding: 8px 0 9px 13px;
+    border-bottom: 1px solid var(--outline);
 
 > button {
     padding: 8px;
@@ -39,10 +41,59 @@ border-bottom: 1px solid var(--outline);
 
 `;
 
-export const BackIcon = styled.div`
+export const BackIcon = styled(ArrowLeft)`
+    width: 24px;
+    height: 24px;
 
+    fill: var(--twitter);
 `;
 
 export const ProfileInfo = styled.div`
+    margin-left: 17px;
 
+    display: flex;
+    flex-direction: column;
+
+    > strong {
+        font-size: 19px;
+        color: var(--gray);
+    }
+
+    > span {
+        font-size: 15px;
+        color: var(--gray);
+    }
+`;
+
+export const BottomMenu = styled.div``;
+
+const iconCSS = css`
+    width: 31px;
+    height: 31px;
+
+    cursor: pointer;
+
+    fill: var(--gray);
+
+    &:hover,
+    &.active{
+        fill: var(--twitter);
+    }
+`;
+
+
+export const HomeIcon = styled(Home)` 
+    ${iconCSS}
+`;
+
+export const SearchIcon = styled(Search)` 
+    ${iconCSS}
+`;
+
+export const BellIcon = styled(Notifications)` 
+    ${iconCSS}
+`;
+
+export const EmailIcon = styled(Email)` 
+    ${iconCSS}
 `;
